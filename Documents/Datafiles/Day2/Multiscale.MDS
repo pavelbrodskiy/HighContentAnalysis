@@ -1,0 +1,808 @@
+"MDA State", Version 1.2
+"bDoTimelapse", TRUE
+"bDoStage", TRUE
+"bDoWavelengths", TRUE
+"bDoZSeries", TRUE
+"iHardwareAutoFocus", 3
+"iHardwareAFFreq", 2
+"bBlackoutMode", FALSE
+"bUseDualZ", FALSE
+"stDualZUses", 1, "Ti Z"
+"stDualZUses", 2, "Ti Z"
+"stDualZUses", 3, "Ti Z"
+"stDualZUses", 4, "Ti Z"
+"iTestAreaDim", 5
+"lMaxExposureDur", 10000
+"dMinExposureDur", 0
+"nTimePoints", 193
+"idxTimeUnits", 3
+"dTimeIntervalUu", 15
+"dDuration", 48
+"idxDurUnits", 4
+"dpStageZTravelOffset", -2000
+"stStagePositionLabel", "F11"
+"nStagePositions", 32
+"dpStageXs", 1, -34653.1
+"dpStageYs", 1, -13256
+"dpStageZs", 1, 5725.5
+"dpStageZ2s", 1, 5725.5
+"bStageUseZTravelOffsets", 1, FALSE
+"iStageSampleLoaderPos", 1, -9999
+"dpStageAFOffsets", 1, 0
+"lStageAFMemorizedPositionIDs", 1, -1
+"stStageLabels", 1, "C3"
+"bStagePosEnabled", 1, TRUE
+"dpStageXs", 2, -23137
+"dpStageYs", 2, -13461.4
+"dpStageZs", 2, 5734.18
+"dpStageZ2s", 2, 5734.18
+"bStageUseZTravelOffsets", 2, FALSE
+"iStageSampleLoaderPos", 2, -9999
+"dpStageAFOffsets", 2, 0
+"lStageAFMemorizedPositionIDs", 2, -1
+"stStageLabels", 2, "C4"
+"bStagePosEnabled", 2, TRUE
+"dpStageXs", 3, -14446
+"dpStageYs", 3, -13461
+"dpStageZs", 3, 5747.55
+"dpStageZ2s", 3, 5747.55
+"bStageUseZTravelOffsets", 3, FALSE
+"iStageSampleLoaderPos", 3, -9999
+"dpStageAFOffsets", 3, 0
+"lStageAFMemorizedPositionIDs", 3, -1
+"stStageLabels", 3, "C5"
+"bStagePosEnabled", 3, TRUE
+"dpStageXs", 4, -5556.2
+"dpStageYs", 4, -13461.4
+"dpStageZs", 4, 5742.43
+"dpStageZ2s", 4, 5742.43
+"bStageUseZTravelOffsets", 4, FALSE
+"iStageSampleLoaderPos", 4, -9999
+"dpStageAFOffsets", 4, 0
+"lStageAFMemorizedPositionIDs", 4, -1
+"stStageLabels", 4, "C6"
+"bStagePosEnabled", 4, TRUE
+"dpStageXs", 5, 3603.7
+"dpStageYs", 5, -13461.5
+"dpStageZs", 5, 5751.02
+"dpStageZ2s", 5, 5751.02
+"bStageUseZTravelOffsets", 5, FALSE
+"iStageSampleLoaderPos", 5, -9999
+"dpStageAFOffsets", 5, 0
+"lStageAFMemorizedPositionIDs", 5, -1
+"stStageLabels", 5, "C7"
+"bStagePosEnabled", 5, TRUE
+"dpStageXs", 6, 12397.1
+"dpStageYs", 6, -13570.2
+"dpStageZs", 6, 5743.8
+"dpStageZ2s", 6, 5743.8
+"bStageUseZTravelOffsets", 6, FALSE
+"iStageSampleLoaderPos", 6, -9999
+"dpStageAFOffsets", 6, 0
+"lStageAFMemorizedPositionIDs", 6, -1
+"stStageLabels", 6, "C8"
+"bStagePosEnabled", 6, TRUE
+"dpStageXs", 7, 20817.5
+"dpStageYs", 7, -13570.1
+"dpStageZs", 7, 5733.1
+"dpStageZ2s", 7, 5733.1
+"bStageUseZTravelOffsets", 7, FALSE
+"iStageSampleLoaderPos", 7, -9999
+"dpStageAFOffsets", 7, 0
+"lStageAFMemorizedPositionIDs", 7, -1
+"stStageLabels", 7, "C9"
+"bStagePosEnabled", 7, TRUE
+"dpStageXs", 8, 30554.7
+"dpStageYs", 8, -13570
+"dpStageZs", 8, 5720.6
+"dpStageZ2s", 8, 5720.6
+"bStageUseZTravelOffsets", 8, FALSE
+"iStageSampleLoaderPos", 8, -9999
+"dpStageAFOffsets", 8, 0
+"lStageAFMemorizedPositionIDs", 8, -1
+"stStageLabels", 8, "C10"
+"bStagePosEnabled", 8, TRUE
+"dpStageXs", 9, -30706.9
+"dpStageYs", 9, -4941
+"dpStageZs", 9, 5740.38
+"dpStageZ2s", 9, 5740.38
+"bStageUseZTravelOffsets", 9, FALSE
+"iStageSampleLoaderPos", 9, -9999
+"dpStageAFOffsets", 9, 0
+"lStageAFMemorizedPositionIDs", 9, -1
+"stStageLabels", 9, "D3"
+"bStagePosEnabled", 9, TRUE
+"dpStageXs", 10, -23428.9
+"dpStageYs", 10, -4835
+"dpStageZs", 10, 5745.27
+"dpStageZ2s", 10, 5745.27
+"bStageUseZTravelOffsets", 10, FALSE
+"iStageSampleLoaderPos", 10, -9999
+"dpStageAFOffsets", 10, 0
+"lStageAFMemorizedPositionIDs", 10, -1
+"stStageLabels", 10, "D4"
+"bStagePosEnabled", 10, TRUE
+"dpStageXs", 11, -14887.9
+"dpStageYs", 11, -4835.3
+"dpStageZs", 11, 5761.4
+"dpStageZ2s", 11, 5761.4
+"bStageUseZTravelOffsets", 11, FALSE
+"iStageSampleLoaderPos", 11, -9999
+"dpStageAFOffsets", 11, 0
+"lStageAFMemorizedPositionIDs", 11, -1
+"stStageLabels", 11, "D5"
+"bStagePosEnabled", 11, TRUE
+"dpStageXs", 12, -5419.7
+"dpStageYs", 12, -4752.4
+"dpStageZs", 12, 5760.25
+"dpStageZ2s", 12, 5760.25
+"bStageUseZTravelOffsets", 12, FALSE
+"iStageSampleLoaderPos", 12, -9999
+"dpStageAFOffsets", 12, 0
+"lStageAFMemorizedPositionIDs", 12, -1
+"stStageLabels", 12, "D6"
+"bStagePosEnabled", 12, TRUE
+"dpStageXs", 13, 3582.6
+"dpStageYs", 13, -4699.9
+"dpStageZs", 13, 5759.25
+"dpStageZ2s", 13, 5759.25
+"bStageUseZTravelOffsets", 13, FALSE
+"iStageSampleLoaderPos", 13, -9999
+"dpStageAFOffsets", 13, 0
+"lStageAFMemorizedPositionIDs", 13, -1
+"stStageLabels", 13, "D7"
+"bStagePosEnabled", 13, TRUE
+"dpStageXs", 14, 13012.2
+"dpStageYs", 14, -4752.7
+"dpStageZs", 14, 5743.43
+"dpStageZ2s", 14, 5743.43
+"bStageUseZTravelOffsets", 14, FALSE
+"iStageSampleLoaderPos", 14, -9999
+"dpStageAFOffsets", 14, 0
+"lStageAFMemorizedPositionIDs", 14, -1
+"stStageLabels", 14, "D8"
+"bStagePosEnabled", 14, TRUE
+"dpStageXs", 15, 21903.6
+"dpStageYs", 15, -4752.4
+"dpStageZs", 15, 5744.43
+"dpStageZ2s", 15, 5744.43
+"bStageUseZTravelOffsets", 15, FALSE
+"iStageSampleLoaderPos", 15, -9999
+"dpStageAFOffsets", 15, 0
+"lStageAFMemorizedPositionIDs", 15, -1
+"stStageLabels", 15, "D9"
+"bStagePosEnabled", 15, TRUE
+"dpStageXs", 16, 30268.3
+"dpStageYs", 16, -4752.3
+"dpStageZs", 16, 5729.68
+"dpStageZ2s", 16, 5729.68
+"bStageUseZTravelOffsets", 16, FALSE
+"iStageSampleLoaderPos", 16, -9999
+"dpStageAFOffsets", 16, 0
+"lStageAFMemorizedPositionIDs", 16, -1
+"stStageLabels", 16, "D10"
+"bStagePosEnabled", 16, TRUE
+"dpStageXs", 17, -30687.6
+"dpStageYs", 17, 3343.6
+"dpStageZs", 17, 5747.18
+"dpStageZ2s", 17, 5747.18
+"bStageUseZTravelOffsets", 17, FALSE
+"iStageSampleLoaderPos", 17, -9999
+"dpStageAFOffsets", 17, 0
+"lStageAFMemorizedPositionIDs", 17, -1
+"stStageLabels", 17, "E3"
+"bStagePosEnabled", 17, TRUE
+"dpStageXs", 18, -23525.8
+"dpStageYs", 18, 3343.6
+"dpStageZs", 18, 5757.23
+"dpStageZ2s", 18, 5757.23
+"bStageUseZTravelOffsets", 18, FALSE
+"iStageSampleLoaderPos", 18, -9999
+"dpStageAFOffsets", 18, 0
+"lStageAFMemorizedPositionIDs", 18, -1
+"stStageLabels", 18, "E4"
+"bStagePosEnabled", 18, TRUE
+"dpStageXs", 19, -14816.2
+"dpStageYs", 19, 3447.8
+"dpStageZs", 19, 5768.48
+"dpStageZ2s", 19, 5768.48
+"bStageUseZTravelOffsets", 19, FALSE
+"iStageSampleLoaderPos", 19, -9999
+"dpStageAFOffsets", 19, 0
+"lStageAFMemorizedPositionIDs", 19, -1
+"stStageLabels", 19, "E5"
+"bStagePosEnabled", 19, TRUE
+"dpStageXs", 20, -5446.7
+"dpStageYs", 20, 3447.5
+"dpStageZs", 20, 5765.6
+"dpStageZ2s", 20, 5765.6
+"bStageUseZTravelOffsets", 20, FALSE
+"iStageSampleLoaderPos", 20, -9999
+"dpStageAFOffsets", 20, 0
+"lStageAFMemorizedPositionIDs", 20, -1
+"stStageLabels", 20, "E6"
+"bStagePosEnabled", 20, TRUE
+"dpStageXs", 21, 3588.5
+"dpStageYs", 21, 3447.8
+"dpStageZs", 21, 5766.18
+"dpStageZ2s", 21, 5766.18
+"bStageUseZTravelOffsets", 21, FALSE
+"iStageSampleLoaderPos", 21, -9999
+"dpStageAFOffsets", 21, 0
+"lStageAFMemorizedPositionIDs", 21, -1
+"stStageLabels", 21, "E7"
+"bStagePosEnabled", 21, TRUE
+"dpStageXs", 22, 13216
+"dpStageYs", 22, 3550.1
+"dpStageZs", 22, 5772.85
+"dpStageZ2s", 22, 5772.85
+"bStageUseZTravelOffsets", 22, FALSE
+"iStageSampleLoaderPos", 22, -9999
+"dpStageAFOffsets", 22, 0
+"lStageAFMemorizedPositionIDs", 22, -1
+"stStageLabels", 22, "E8"
+"bStagePosEnabled", 22, TRUE
+"dpStageXs", 23, 22034
+"dpStageYs", 23, 3550.2
+"dpStageZs", 23, 5759.32
+"dpStageZ2s", 23, 5759.32
+"bStageUseZTravelOffsets", 23, FALSE
+"iStageSampleLoaderPos", 23, -9999
+"dpStageAFOffsets", 23, 0
+"lStageAFMemorizedPositionIDs", 23, -1
+"stStageLabels", 23, "E9"
+"bStagePosEnabled", 23, TRUE
+"dpStageXs", 24, 30914.5
+"dpStageYs", 24, 3705
+"dpStageZs", 24, 5741.15
+"dpStageZ2s", 24, 5741.15
+"bStageUseZTravelOffsets", 24, FALSE
+"iStageSampleLoaderPos", 24, -9999
+"dpStageAFOffsets", 24, 0
+"lStageAFMemorizedPositionIDs", 24, -1
+"stStageLabels", 24, "E10"
+"bStagePosEnabled", 24, TRUE
+"dpStageXs", 25, -33485.3
+"dpStageYs", 25, 13687.5
+"dpStageZs", 25, 5756.23
+"dpStageZ2s", 25, 5756.23
+"bStageUseZTravelOffsets", 25, FALSE
+"iStageSampleLoaderPos", 25, -9999
+"dpStageAFOffsets", 25, 0
+"lStageAFMemorizedPositionIDs", 25, -1
+"stStageLabels", 25, "F3"
+"bStagePosEnabled", 25, TRUE
+"dpStageXs", 26, -22609.6
+"dpStageYs", 26, 13787
+"dpStageZs", 26, 5766.13
+"dpStageZ2s", 26, 5766.13
+"bStageUseZTravelOffsets", 26, FALSE
+"iStageSampleLoaderPos", 26, -9999
+"dpStageAFOffsets", 26, 0
+"lStageAFMemorizedPositionIDs", 26, -1
+"stStageLabels", 26, "F4"
+"bStagePosEnabled", 26, TRUE
+"dpStageXs", 27, -14548.3
+"dpStageYs", 27, 13786.7
+"dpStageZs", 27, 5777.52
+"dpStageZ2s", 27, 5777.52
+"bStageUseZTravelOffsets", 27, FALSE
+"iStageSampleLoaderPos", 27, -9999
+"dpStageAFOffsets", 27, 0
+"lStageAFMemorizedPositionIDs", 27, -1
+"stStageLabels", 27, "F5"
+"bStagePosEnabled", 27, TRUE
+"dpStageXs", 28, -5148.9
+"dpStageYs", 28, 13991.2
+"dpStageZs", 28, 5781.85
+"dpStageZ2s", 28, 5781.85
+"bStageUseZTravelOffsets", 28, FALSE
+"iStageSampleLoaderPos", 28, -9999
+"dpStageAFOffsets", 28, 0
+"lStageAFMemorizedPositionIDs", 28, -1
+"stStageLabels", 28, "F6"
+"bStagePosEnabled", 28, TRUE
+"dpStageXs", 29, 4313.6
+"dpStageYs", 29, 14103.8
+"dpStageZs", 29, 5780.4
+"dpStageZ2s", 29, 5780.4
+"bStageUseZTravelOffsets", 29, FALSE
+"iStageSampleLoaderPos", 29, -9999
+"dpStageAFOffsets", 29, 0
+"lStageAFMemorizedPositionIDs", 29, -1
+"stStageLabels", 29, "F7"
+"bStagePosEnabled", 29, TRUE
+"dpStageXs", 30, 12836.9
+"dpStageYs", 30, 13997.4
+"dpStageZs", 30, 5781.82
+"dpStageZ2s", 30, 5781.82
+"bStageUseZTravelOffsets", 30, FALSE
+"iStageSampleLoaderPos", 30, -9999
+"dpStageAFOffsets", 30, 0
+"lStageAFMemorizedPositionIDs", 30, -1
+"stStageLabels", 30, "F8"
+"bStagePosEnabled", 30, TRUE
+"dpStageXs", 31, 20736.6
+"dpStageYs", 31, 14103.8
+"dpStageZs", 31, 5765.18
+"dpStageZ2s", 31, 5765.18
+"bStageUseZTravelOffsets", 31, FALSE
+"iStageSampleLoaderPos", 31, -9999
+"dpStageAFOffsets", 31, 0
+"lStageAFMemorizedPositionIDs", 31, -1
+"stStageLabels", 31, "F9"
+"bStagePosEnabled", 31, TRUE
+"dpStageXs", 32, 29190.3
+"dpStageYs", 32, 14195.7
+"dpStageZs", 32, 5755.2
+"dpStageZ2s", 32, 5755.2
+"bStageUseZTravelOffsets", 32, FALSE
+"iStageSampleLoaderPos", 32, -9999
+"dpStageAFOffsets", 32, 0
+"lStageAFMemorizedPositionIDs", 32, -1
+"stStageLabels", 32, "F10"
+"bStagePosEnabled", 32, TRUE
+"nZSteps", 11
+"dpZStepSize", 2
+"bZRange", TRUE
+"dpZTop", -8.05
+"dpZBottom", -28.05
+"idxZLoopOrder", 2
+"bKeepShutterOpenEachZ", FALSE
+"nAFSearchType", 1
+"idxAFAlgorithm", 1
+"dAFRange", 3
+"dAFAccuracy", 1
+"dAFMaxStepSize", 3
+"bAFDisplayImages", TRUE
+"bAFUpdateZ", TRUE
+"bAFBacklashCompensation", TRUE
+"nWavelengths", 2
+"stSetOfIllumination", 1, "Confocal 488"
+"dbSetOfExposures", 1, 200
+"iSetOfExposureUnits", 1, 1
+"dbSetOfGains", 1, 1
+"dbSetOfIntensifierGains1", 1, 300
+"dbSetOfIntensifierGains2", 1, 0
+"dbSetOfFrames", 1, 1
+"iSetOfAutoExposes", 1, 3
+"iSetOfAXFrequencies", 1, 2
+"iSetOfCollections", 1, 1
+"iSetOfWFrequencies", 1, 2
+"uSetOfTargets", 1, 3000
+"iSetOfAlignX", 1, 0
+"iSetOfAlignY", 1, 0
+"iSetOfAutoFocus", 1, 3
+"iSetOfAFFrequencies", 1, 2
+"bSetOfWaveDoZ", 1, TRUE
+"iSetOfXPos", 1, 744
+"iSetOfYPos", 1, 61
+"iSetOfZoom", 1, 100
+"dSetOfContrast", 1, 50
+"dSetOfBrightness", 1, 50
+"iSetOfLutModel", 1, 8
+"dSetOfGammaR", 1, 1
+"dSetOfGammaG", 1, 1
+"dSetOfGammaB", 1, 1
+"dSetOfGammaMono", 1, 1
+"bSetOfAutoScale", 1, TRUE
+"dSetOfAutoScaleHi", 1, 0.0011
+"dSetOfAutoScaleLo", 1, 0
+"uSetOfMinScale", 1, 94
+"uSetOfMaxScale", 1, 682
+"bSetOfWaveDoStream", 1, TRUE
+"uiSetOfBinnings", 1, 1
+"uiSetOfTransferSpeeds", 1, 1
+"dbSetOfWaveZDCOffsets", 1, 2024
+"lSetOfWaveAFMemorizedPositionIDs", 1, -1
+"stSetOfWaveAFMemorizedPositionData", 1, ""
+"dbSetOfWaveOptiGridZPositions", 1, 0
+"stSetOfIllumination", 2, "Confocal 640"
+"dbSetOfExposures", 2, 100
+"iSetOfExposureUnits", 2, 1
+"dbSetOfGains", 2, 1
+"dbSetOfIntensifierGains1", 2, 300
+"dbSetOfIntensifierGains2", 2, 0
+"dbSetOfFrames", 2, 1
+"iSetOfAutoExposes", 2, 3
+"iSetOfAXFrequencies", 2, 2
+"iSetOfCollections", 2, 1
+"iSetOfWFrequencies", 2, 2
+"uSetOfTargets", 2, 3000
+"iSetOfAlignX", 2, 0
+"iSetOfAlignY", 2, 0
+"iSetOfAutoFocus", 2, 3
+"iSetOfAFFrequencies", 2, 2
+"bSetOfWaveDoZ", 2, TRUE
+"iSetOfXPos", 2, 703
+"iSetOfYPos", 2, 54
+"iSetOfZoom", 2, 113
+"dSetOfContrast", 2, 50
+"dSetOfBrightness", 2, 50
+"iSetOfLutModel", 2, 8
+"dSetOfGammaR", 2, 1
+"dSetOfGammaG", 2, 1
+"dSetOfGammaB", 2, 1
+"dSetOfGammaMono", 2, 1
+"bSetOfAutoScale", 2, TRUE
+"dSetOfAutoScaleHi", 2, 0.0011
+"dSetOfAutoScaleLo", 2, 0
+"uSetOfMinScale", 2, 96
+"uSetOfMaxScale", 2, 1872
+"bSetOfWaveDoStream", 2, TRUE
+"uiSetOfBinnings", 2, 1
+"uiSetOfTransferSpeeds", 2, 1
+"dbSetOfWaveZDCOffsets", 2, 2024
+"lSetOfWaveAFMemorizedPositionIDs", 2, -1
+"stSetOfWaveAFMemorizedPositionData", 2, ""
+"dbSetOfWaveOptiGridZPositions", 2, 0
+"stSetOfIllumination", 3, "[None]"
+"dbSetOfExposures", 3, 100
+"iSetOfExposureUnits", 3, 0
+"dbSetOfGains", 3, 0
+"dbSetOfIntensifierGains1", 3, 0
+"dbSetOfIntensifierGains2", 3, 0
+"dbSetOfFrames", 3, 1
+"iSetOfAutoExposes", 3, 2
+"iSetOfAXFrequencies", 3, 1
+"iSetOfCollections", 3, 1
+"iSetOfWFrequencies", 3, 1
+"uSetOfTargets", 3, 3000
+"iSetOfAlignX", 3, 0
+"iSetOfAlignY", 3, 0
+"iSetOfAutoFocus", 3, 1
+"iSetOfAFFrequencies", 3, 1
+"bSetOfWaveDoZ", 3, FALSE
+"iSetOfXPos", 3, 150
+"iSetOfYPos", 3, 150
+"iSetOfZoom", 3, 100
+"dSetOfContrast", 3, 50
+"dSetOfBrightness", 3, 50
+"iSetOfLutModel", 3, 8
+"dSetOfGammaR", 3, 1
+"dSetOfGammaG", 3, 1
+"dSetOfGammaB", 3, 1
+"dSetOfGammaMono", 3, 1
+"bSetOfAutoScale", 3, TRUE
+"dSetOfAutoScaleHi", 3, 0
+"dSetOfAutoScaleLo", 3, 0
+"uSetOfMinScale", 3, 0
+"uSetOfMaxScale", 3, 4096
+"bSetOfWaveDoStream", 3, FALSE
+"uiSetOfBinnings", 3, 1
+"uiSetOfTransferSpeeds", 3, 1
+"dbSetOfWaveZDCOffsets", 3, 0
+"lSetOfWaveAFMemorizedPositionIDs", 3, -1
+"stSetOfWaveAFMemorizedPositionData", 3, ""
+"dbSetOfWaveOptiGridZPositions", 3, 0
+"stSetOfIllumination", 4, "[None]"
+"dbSetOfExposures", 4, 100
+"iSetOfExposureUnits", 4, 0
+"dbSetOfGains", 4, 0
+"dbSetOfIntensifierGains1", 4, 0
+"dbSetOfIntensifierGains2", 4, 0
+"dbSetOfFrames", 4, 1
+"iSetOfAutoExposes", 4, 2
+"iSetOfAXFrequencies", 4, 1
+"iSetOfCollections", 4, 1
+"iSetOfWFrequencies", 4, 1
+"uSetOfTargets", 4, 3000
+"iSetOfAlignX", 4, 0
+"iSetOfAlignY", 4, 0
+"iSetOfAutoFocus", 4, 1
+"iSetOfAFFrequencies", 4, 1
+"bSetOfWaveDoZ", 4, FALSE
+"iSetOfXPos", 4, 200
+"iSetOfYPos", 4, 200
+"iSetOfZoom", 4, 100
+"dSetOfContrast", 4, 50
+"dSetOfBrightness", 4, 50
+"iSetOfLutModel", 4, 8
+"dSetOfGammaR", 4, 1
+"dSetOfGammaG", 4, 1
+"dSetOfGammaB", 4, 1
+"dSetOfGammaMono", 4, 1
+"bSetOfAutoScale", 4, TRUE
+"dSetOfAutoScaleHi", 4, 0
+"dSetOfAutoScaleLo", 4, 0
+"uSetOfMinScale", 4, 0
+"uSetOfMaxScale", 4, 4096
+"bSetOfWaveDoStream", 4, FALSE
+"uiSetOfBinnings", 4, 1
+"uiSetOfTransferSpeeds", 4, 1
+"dbSetOfWaveZDCOffsets", 4, 0
+"lSetOfWaveAFMemorizedPositionIDs", 4, -1
+"stSetOfWaveAFMemorizedPositionData", 4, ""
+"dbSetOfWaveOptiGridZPositions", 4, 0
+"stSetOfIllumination", 5, "[None]"
+"dbSetOfExposures", 5, 100
+"iSetOfExposureUnits", 5, 0
+"dbSetOfGains", 5, 0
+"dbSetOfIntensifierGains1", 5, 0
+"dbSetOfIntensifierGains2", 5, 0
+"dbSetOfFrames", 5, 1
+"iSetOfAutoExposes", 5, 2
+"iSetOfAXFrequencies", 5, 1
+"iSetOfCollections", 5, 1
+"iSetOfWFrequencies", 5, 1
+"uSetOfTargets", 5, 3000
+"iSetOfAlignX", 5, 0
+"iSetOfAlignY", 5, 0
+"iSetOfAutoFocus", 5, 1
+"iSetOfAFFrequencies", 5, 1
+"bSetOfWaveDoZ", 5, FALSE
+"iSetOfXPos", 5, 250
+"iSetOfYPos", 5, 250
+"iSetOfZoom", 5, 100
+"dSetOfContrast", 5, 50
+"dSetOfBrightness", 5, 50
+"iSetOfLutModel", 5, 8
+"dSetOfGammaR", 5, 1
+"dSetOfGammaG", 5, 1
+"dSetOfGammaB", 5, 1
+"dSetOfGammaMono", 5, 1
+"bSetOfAutoScale", 5, TRUE
+"dSetOfAutoScaleHi", 5, 0
+"dSetOfAutoScaleLo", 5, 0
+"uSetOfMinScale", 5, 0
+"uSetOfMaxScale", 5, 4096
+"bSetOfWaveDoStream", 5, FALSE
+"uiSetOfBinnings", 5, 1
+"uiSetOfTransferSpeeds", 5, 1
+"dbSetOfWaveZDCOffsets", 5, 0
+"lSetOfWaveAFMemorizedPositionIDs", 5, -1
+"stSetOfWaveAFMemorizedPositionData", 5, ""
+"dbSetOfWaveOptiGridZPositions", 5, 0
+"stSetOfIllumination", 6, "[None]"
+"dbSetOfExposures", 6, 100
+"iSetOfExposureUnits", 6, 0
+"dbSetOfGains", 6, 0
+"dbSetOfIntensifierGains1", 6, 0
+"dbSetOfIntensifierGains2", 6, 0
+"dbSetOfFrames", 6, 1
+"iSetOfAutoExposes", 6, 2
+"iSetOfAXFrequencies", 6, 1
+"iSetOfCollections", 6, 1
+"iSetOfWFrequencies", 6, 1
+"uSetOfTargets", 6, 3000
+"iSetOfAlignX", 6, 0
+"iSetOfAlignY", 6, 0
+"iSetOfAutoFocus", 6, 1
+"iSetOfAFFrequencies", 6, 1
+"bSetOfWaveDoZ", 6, FALSE
+"iSetOfXPos", 6, 300
+"iSetOfYPos", 6, 300
+"iSetOfZoom", 6, 100
+"dSetOfContrast", 6, 50
+"dSetOfBrightness", 6, 50
+"iSetOfLutModel", 6, 8
+"dSetOfGammaR", 6, 1
+"dSetOfGammaG", 6, 1
+"dSetOfGammaB", 6, 1
+"dSetOfGammaMono", 6, 1
+"bSetOfAutoScale", 6, TRUE
+"dSetOfAutoScaleHi", 6, 0
+"dSetOfAutoScaleLo", 6, 0
+"uSetOfMinScale", 6, 0
+"uSetOfMaxScale", 6, 4096
+"bSetOfWaveDoStream", 6, FALSE
+"uiSetOfBinnings", 6, 1
+"uiSetOfTransferSpeeds", 6, 1
+"dbSetOfWaveZDCOffsets", 6, 0
+"lSetOfWaveAFMemorizedPositionIDs", 6, -1
+"stSetOfWaveAFMemorizedPositionData", 6, ""
+"dbSetOfWaveOptiGridZPositions", 6, 0
+"stSetOfIllumination", 7, "[None]"
+"dbSetOfExposures", 7, 100
+"iSetOfExposureUnits", 7, 0
+"dbSetOfGains", 7, 0
+"dbSetOfIntensifierGains1", 7, 0
+"dbSetOfIntensifierGains2", 7, 0
+"dbSetOfFrames", 7, 1
+"iSetOfAutoExposes", 7, 2
+"iSetOfAXFrequencies", 7, 1
+"iSetOfCollections", 7, 1
+"iSetOfWFrequencies", 7, 1
+"uSetOfTargets", 7, 3000
+"iSetOfAlignX", 7, 0
+"iSetOfAlignY", 7, 0
+"iSetOfAutoFocus", 7, 1
+"iSetOfAFFrequencies", 7, 1
+"bSetOfWaveDoZ", 7, FALSE
+"iSetOfXPos", 7, 350
+"iSetOfYPos", 7, 350
+"iSetOfZoom", 7, 100
+"dSetOfContrast", 7, 50
+"dSetOfBrightness", 7, 50
+"iSetOfLutModel", 7, 8
+"dSetOfGammaR", 7, 1
+"dSetOfGammaG", 7, 1
+"dSetOfGammaB", 7, 1
+"dSetOfGammaMono", 7, 1
+"bSetOfAutoScale", 7, TRUE
+"dSetOfAutoScaleHi", 7, 0
+"dSetOfAutoScaleLo", 7, 0
+"uSetOfMinScale", 7, 0
+"uSetOfMaxScale", 7, 4096
+"bSetOfWaveDoStream", 7, FALSE
+"uiSetOfBinnings", 7, 1
+"uiSetOfTransferSpeeds", 7, 1
+"dbSetOfWaveZDCOffsets", 7, 0
+"lSetOfWaveAFMemorizedPositionIDs", 7, -1
+"stSetOfWaveAFMemorizedPositionData", 7, ""
+"dbSetOfWaveOptiGridZPositions", 7, 0
+"stSetOfIllumination", 8, "[None]"
+"dbSetOfExposures", 8, 100
+"iSetOfExposureUnits", 8, 0
+"dbSetOfGains", 8, 0
+"dbSetOfIntensifierGains1", 8, 0
+"dbSetOfIntensifierGains2", 8, 0
+"dbSetOfFrames", 8, 1
+"iSetOfAutoExposes", 8, 2
+"iSetOfAXFrequencies", 8, 1
+"iSetOfCollections", 8, 1
+"iSetOfWFrequencies", 8, 1
+"uSetOfTargets", 8, 3000
+"iSetOfAlignX", 8, 0
+"iSetOfAlignY", 8, 0
+"iSetOfAutoFocus", 8, 1
+"iSetOfAFFrequencies", 8, 1
+"bSetOfWaveDoZ", 8, FALSE
+"iSetOfXPos", 8, 400
+"iSetOfYPos", 8, 400
+"iSetOfZoom", 8, 100
+"dSetOfContrast", 8, 50
+"dSetOfBrightness", 8, 50
+"iSetOfLutModel", 8, 8
+"dSetOfGammaR", 8, 1
+"dSetOfGammaG", 8, 1
+"dSetOfGammaB", 8, 1
+"dSetOfGammaMono", 8, 1
+"bSetOfAutoScale", 8, TRUE
+"dSetOfAutoScaleHi", 8, 0
+"dSetOfAutoScaleLo", 8, 0
+"uSetOfMinScale", 8, 0
+"uSetOfMaxScale", 8, 4096
+"bSetOfWaveDoStream", 8, FALSE
+"uiSetOfBinnings", 8, 1
+"uiSetOfTransferSpeeds", 8, 1
+"dbSetOfWaveZDCOffsets", 8, 0
+"lSetOfWaveAFMemorizedPositionIDs", 8, -1
+"stSetOfWaveAFMemorizedPositionData", 8, ""
+"dbSetOfWaveOptiGridZPositions", 8, 0
+"bSeparateBinning", FALSE
+"bSeparateHardwareAFOffsets", FALSE
+"bDefaultDisplay", FALSE
+"bMinimizeImages", FALSE
+"stDescription", ""
+"stDataDir", "D:\Zartman Lab\Pavel\5.3.17 Cl8 Blebbistatin\LowFrequency"
+"stDataFile", "Cl8_Blebistatin_LowFrequency_01"
+"bIncrementFile", TRUE
+"bSaveSamplePositionsAsSeparate", FALSE
+"bDoStream", FALSE
+"bStreamTime", FALSE
+"bStreamZ", FALSE
+"bStreamWaves", FALSE
+"dpStreamExposure", 100
+"dpStreamGain", 0
+"dpStreamIntensifierGain1", 0
+"dpStreamIntensifierGain2", 0
+"nStreamFramesSkippedForZReset", 0
+"iStreamToHardDisk", 1
+"lStreamStartFrame", 0
+"iStreamTriggerMode", 1
+"iStreamDualCamState", 1
+"iStreamCamState", 1
+"iStreamCamShutter", 1
+"iStreamCamClear", 1
+"stStreamProgramNameForAcquire", ""
+"bStreamPreview", FALSE
+"lStreamPreviewInterval", 1
+"nHBin", 1
+"nVBin", 1
+"nLiveBin", 1
+"nROIX", 0
+"nROIY", 0
+"nROIW", 512
+"nROIH", 512
+"xSnap", 412
+"ySnap", 35
+"nSnapZoom", 145
+"dSnapContrast", 50
+"dSnapBrightness", 50
+"iSnapLutModel", 8
+"dSnapGammaR", 1
+"dSnapGammaG", 1
+"dSnapGammaB", 1
+"dSnapGammaMono", 1
+"bSnapAutoScale", FALSE
+"dSnapAutoScaleHi", 0
+"dSnapAutoScaleLo", 0
+"uSnapMinScale", 94
+"uSnapMaxScale", 121
+"stLiveDisplayState", "0 0 1 0 2 0 3 65535 22 1 25 70.61 26 0.078 23 121 24 6422 4 0 5 50 6 0 7 0 8 50 9 256 10 8 12 63 13 86 14 743 15 743 16 1 17 0 18 0 19 145 20 64 21 1"
+"xSnap2", 0
+"ySnap2", 0
+"nSnapZoom2", 100
+"dSnapContrast2", 50
+"dSnapBrightness2", 50
+"iSnapLutModel2", 8
+"dSnapGammaR2", 1
+"dSnapGammaG2", 1
+"dSnapGammaB2", 1
+"dSnapGammaMono2", 1
+"bSnapAutoScale2", TRUE
+"dSnapAutoScaleHi2", 0
+"dSnapAutoScaleLo2", 0
+"uSnapMinScale2", 0
+"uSnapMaxScale2", 4096
+"bDoJournal", TRUE
+"NumberOfJournals", 1
+"NDJournal", 1, "C:\MM\app\mmproc\journals\MultiscaleImaging\tmp.jnl", 4, 8, 0, 1
+"bUseAdvancedStageWaveParms", FALSE
+"bDisplayStageWaveParmsMultiline", TRUE
+"astStageWaveParms", 1, 1, ""
+"astStageWaveParms", 1, 2, ""
+"astStageWaveParms", 2, 1, ""
+"astStageWaveParms", 2, 2, ""
+"astStageWaveParms", 3, 1, ""
+"astStageWaveParms", 3, 2, ""
+"astStageWaveParms", 4, 1, ""
+"astStageWaveParms", 4, 2, ""
+"astStageWaveParms", 5, 1, ""
+"astStageWaveParms", 5, 2, ""
+"astStageWaveParms", 6, 1, ""
+"astStageWaveParms", 6, 2, ""
+"astStageWaveParms", 7, 1, ""
+"astStageWaveParms", 7, 2, ""
+"astStageWaveParms", 8, 1, ""
+"astStageWaveParms", 8, 2, ""
+"astStageWaveParms", 9, 1, ""
+"astStageWaveParms", 9, 2, ""
+"astStageWaveParms", 10, 1, ""
+"astStageWaveParms", 10, 2, ""
+"astStageWaveParms", 11, 1, ""
+"astStageWaveParms", 11, 2, ""
+"astStageWaveParms", 12, 1, ""
+"astStageWaveParms", 12, 2, ""
+"astStageWaveParms", 13, 1, ""
+"astStageWaveParms", 13, 2, ""
+"astStageWaveParms", 14, 1, ""
+"astStageWaveParms", 14, 2, ""
+"astStageWaveParms", 15, 1, ""
+"astStageWaveParms", 15, 2, ""
+"astStageWaveParms", 16, 1, ""
+"astStageWaveParms", 16, 2, ""
+"astStageWaveParms", 17, 1, ""
+"astStageWaveParms", 17, 2, ""
+"astStageWaveParms", 18, 1, ""
+"astStageWaveParms", 18, 2, ""
+"astStageWaveParms", 19, 1, ""
+"astStageWaveParms", 19, 2, ""
+"astStageWaveParms", 20, 1, ""
+"astStageWaveParms", 20, 2, ""
+"astStageWaveParms", 21, 1, ""
+"astStageWaveParms", 21, 2, ""
+"astStageWaveParms", 22, 1, ""
+"astStageWaveParms", 22, 2, ""
+"astStageWaveParms", 23, 1, ""
+"astStageWaveParms", 23, 2, ""
+"astStageWaveParms", 24, 1, ""
+"astStageWaveParms", 24, 2, ""
+"astStageWaveParms", 25, 1, ""
+"astStageWaveParms", 25, 2, ""
+"astStageWaveParms", 26, 1, ""
+"astStageWaveParms", 26, 2, ""
+"astStageWaveParms", 27, 1, ""
+"astStageWaveParms", 27, 2, ""
+"astStageWaveParms", 28, 1, ""
+"astStageWaveParms", 28, 2, ""
+"astStageWaveParms", 29, 1, ""
+"astStageWaveParms", 29, 2, ""
+"astStageWaveParms", 30, 1, ""
+"astStageWaveParms", 30, 2, ""
+"astStageWaveParms", 31, 1, ""
+"astStageWaveParms", 31, 2, ""
+"astStageWaveParms", 32, 1, ""
+"astStageWaveParms", 32, 2, ""
+"EndFile"
