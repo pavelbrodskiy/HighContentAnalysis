@@ -35,7 +35,7 @@ for i = 1:length(labels)
             hyperstack(:,:,qz,qt,qc) = bfGetPlane(r, f);
         end
         
-        zProj = squeeze(max(hyperstack, [], 3));
+        zProj = permute(max(hyperstack, [], 3),[1,2,4,5,3]);
         
         % Extract metadata table for this series
         seriesMetadata = r.getSeriesMetadata();

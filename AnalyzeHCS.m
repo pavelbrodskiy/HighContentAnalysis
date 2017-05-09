@@ -4,53 +4,41 @@ close all
 settings = prepareWorkspace();
 
 %% Declare constants
-letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
 
-%% Convert Low Frequency data to z-projected videos
-tblLowFrequency = readtable('C:\ResearchTemp\Experiment7-Blebbistatin\Inputs\LowFreqLabels.xlsx');
+%% Load tables describing high and low frequency data
+tblLowFrequency = readtable(settings.tblLowFreq);
+[tblHighFrequency, tblPlateMap, tblPlateLegend] = getHighFrequencyTable(settings);
 processConfocalData(tblLowFrequency.Label, settings)
-
-%% Processess inputs
-tblHighFrequency = readtable('C:\ResearchTemp\Experiment7-Blebbistatin\Inputs\HighFreqLabels.xlsx');
-[~,~,tblPlateMap] = xlsread('C:\ResearchTemp\Experiment7-Blebbistatin\Inputs\PlateLayout.xlsx');
-tblPlateLegend = readtable('C:\ResearchTemp\Experiment7-Blebbistatin\Inputs\PlateLayoutLegend.xlsx');
-
-fields = tblPlateLegend.Properties.VariableNames(2:end);
-
-tblHighFrequency.Conditions = cellfun(@(x) {num2str(x)},tblPlateMap(sub2ind(size(tblPlateMap),tblHighFrequency.WellY+1,tblHighFrequency.WellX+1)));
-conditionIndex = cell2mat(cellfun(@(x,y) find(~cellfun('isempty',strfind(y,x))), ...
-    tblHighFrequency.Conditions, repmat({tblPlateLegend.Var1}, [1, length(tblHighFrequency.Conditions)])', 'UniformOutput',false));
-
-for i = 1:length(fields)
-    tblHighFrequency.(fields{i}) = tblPlateLegend.(fields{i})(conditionIndex);
-end
-
-tblHighFrequency.PlateAddress = arrayfun(@(x,y) [letters{x} num2str(y)], tblHighFrequency.WellY, tblHighFrequency.WellX, 'UniformOutput', 0);
 
 mkdir('MP4');
 
 %% Make Low Frequency movies
 s = 32;
-totalZProj = [];
+metadata = load([settings.thruData 'LowFrequency_f1.mat']);
+
 for j = 1:s
     % Obtain condition information
-    condition = cellfun(@(x) {num2str(x)},tblPlateMap(sub2ind(size(tblPlateMap),find(contains(letters, coords(1)))+1,str2num(coords(2:end))+1)));
+    str = metadata.metadata.global.get(['Stage' num2str(j)]);
+    coords = str(2:end-1);
+    
+    condition = cellfun(@(x) {num2str(x)},tblPlateMap(sub2ind(size(tblPlateMap),find(contains(settings.letters, coords(1)))+1,str2num(coords(2:end))+1)));
     conditionIndex = cell2mat(cellfun(@(x,y) find(~cellfun('isempty',strfind(y,x))), ...
         tblHighFrequency.Conditions, repmat({tblPlateLegend.Var1}, [1, length(tblHighFrequency.Conditions)])', 'UniformOutput',false));
     
-    for i = 1:length(fields)
-        lowFreq.(fields{i}) = tblPlateLegend.(fields{i})(find(contains(tblPlateLegend.Var1, condition)));
-    end
+    idx = find(contains(tblPlateLegend.Var1, condition));
     
-    filename = ['MP4' filesep 'Cl8_ZOf_' num2str(lowFreq.Blebbistatin_uM) ...
-        '_uM_Bleb_' num2str(lowFreq.DMSO_percent) '_pctDMSO_'...
+    filename = ['MP4' filesep 'Cl8_ZB_' num2str(tblPlateLegend.Blebbistatin_uM(idx)) ...
+        '_uM_Bleb_' num2str(tblPlateLegend.DMSO_percent(idx)) '_pctDMSO_'...
         coords '_LowFreq'];
+    
+    disp(['Processing: ' filename])
     
     if exist([filename, '.mp4'],'file')
         continue
     end
     
     % Load raw data
+    totalZProj = [];
     for i = 1:length(tblLowFrequency.Label)
         tmp = load([settings.thruData 'LowFrequency_s' num2str(j) '_f' num2str(i) '.mat'], 'zProj');
         totalZProj = cat(3, totalZProj, tmp.zProj);
@@ -60,87 +48,21 @@ for j = 1:s
     totalZProj = totalZProj(:,:,:,[2,1]);
     totalZProj(:,:,:,3) = 0;
     
-    writeMP4(permute(zProj, [1,2,4,3]), filename, 4);
+    writeMP4(totalZProj, filename, 15);
 end
-
-return
-
-for i = 1:size(raw,1)
-    str = raw{i,2}.get(['Global Stage' num2str(i)]);
-    coords = str(2:end-1);
-    
-    tmp = raw{i, 1};
-    tmp2 = raw2{i, 1};
-    zStack = cat(3, tmp{:,1}, tmp2{:,1});
-    ts = length(zStack(:)) / 512 / 512 / zs / cs;
-    hyperStack = reshape(zStack, 512, 512, zs, cs, ts);
-    
-    condition = cellfun(@(x) {num2str(x)},tblPlateMap(sub2ind(size(tblPlateMap),find(contains(letters, coords(1)))+1,str2num(coords(2:end))+1)));
-    conditionIndex = cell2mat(cellfun(@(x,y) find(~cellfun('isempty',strfind(y,x))), ...
-        tblHighFrequency.Conditions, repmat({tblPlateLegend.Var1}, [1, length(tblHighFrequency.Conditions)])', 'UniformOutput',false));
-    
-    for j = 1:length(fields)
-        lowFreq.(fields{j}) = tblPlateLegend.(fields{j})(find(contains(tblPlateLegend.Var1, condition)));
-    end
-    
-    zProj = squeeze(max(hyperStack, [], 3));
-    zProj = zProj(:,:,[2,1],:);
-    zProj(:,:,3,:) = 0;
-    
-    filename = ['MP4' filesep 'Cl8_ZOf_' num2str(lowFreq.Blebbistatin_uM) ...
-        '_uM_Bleb_' num2str(lowFreq.DMSO_percent) '_pctDMSO_'...
-        coords '_LowFreq'];
-    
-    if true %~exist([filename, '.mp4'],'file')
-        writeMP4(permute(zProj, [1,2,4,3]), filename, 4);
-    end
-end
-
-%% Make Low Frequency movies
-% if ~exist([settings.thruData 'LowFreq.mat'], 'file')
-%     raw = bfopen(beforeTreatmentDir);
-%     raw2 = bfopen(afterTreatmentDir);
-%     save([settings.thruData 'LowFreq.mat'], 'raw', 'raw2');
-% else
-%     load([settings.thruData 'LowFreq.mat'], 'raw', 'raw2');
-% end
-%
-% zs = 11;
-% cs = 2;
-%
-% for i = 1:size(raw,1)
-%     str = raw{i,2}.get(['Global Stage' num2str(i)]);
-%     coords = str(2:end-1);
-%
-%     tmp = raw{i, 1};
-%     tmp2 = raw2{i, 1};
-%     zStack = cat(3, tmp{:,1}, tmp2{:,1});
-%     ts = length(zStack(:)) / 512 / 512 / zs / cs;
-%     hyperStack = reshape(zStack, 512, 512, zs, cs, ts);
-%
-%     condition = cellfun(@(x) {num2str(x)},tblPlateMap(sub2ind(size(tblPlateMap),find(contains(letters, coords(1)))+1,str2num(coords(2:end))+1)));
-%     conditionIndex = cell2mat(cellfun(@(x,y) find(~cellfun('isempty',strfind(y,x))), ...
-%         tblHighFrequency.Conditions, repmat({tblPlateLegend.Var1}, [1, length(tblHighFrequency.Conditions)])', 'UniformOutput',false));
-%
-%     for j = 1:length(fields)
-%         lowFreq.(fields{j}) = tblPlateLegend.(fields{j})(find(contains(tblPlateLegend.Var1, condition)));
-%     end
-%
-%     zProj = squeeze(max(hyperStack, [], 3));
-%     zProj = zProj(:,:,[2,1],:);
-%     zProj(:,:,3,:) = 0;
-%
-%     filename = ['MP4' filesep 'Cl8_ZOf_' num2str(lowFreq.Blebbistatin_uM) ...
-%         '_uM_Bleb_' num2str(lowFreq.DMSO_percent) '_pctDMSO_'...
-%         coords '_LowFreq'];
-%
-%     if true %~exist([filename, '.mp4'],'file')
-%         writeMP4(permute(zProj, [1,2,4,3]), filename, 4);
-%     end
-% end
 
 %% Make high frequency movies
 for i = 1:length(tblHighFrequency.Label)
+    filename = ['MP4' filesep 'Cl8_ZB_' num2str(tblHighFrequency.Blebbistatin_uM(i)) ...
+        '_uM_Bleb_' num2str(tblHighFrequency.DMSO_percent(i)) '_pctDMSO_' ...
+        tblHighFrequency.PlateAddress{i} '_day_' num2str(round(tblHighFrequency.Days(i)*100)/100) '_HighFreq'];
+    
+    disp(['Processing: ' filename])
+    
+    if exist([filename, '.mp4'],'file')
+        continue
+    end
+    
     if ~exist([settings.thruData tblHighFrequency.Label{i} '.mat'], 'file')
         raw = bfopen([settings.inData 'HighFrequency' filesep tblHighFrequency.Label{i} '.tif']);
         raw = cat(1,raw{:,1});
@@ -151,19 +73,10 @@ for i = 1:length(tblHighFrequency.Label)
         load([settings.thruData tblHighFrequency.Label{i} '.mat'], 'zStack');
     end
     
-    filename = ['MP4' filesep 'Cl8_ZOf_' num2str(tblHighFrequency.Blebbistatin_uM(i)) ...
-        '_uM_Bleb_' num2str(tblHighFrequency.DMSO_percent(i)) '_pctDMSO_' ...
-        tblHighFrequency.PlateAddress{i} '_day_' num2str(round(tblHighFrequency.Days(2)*100)/100) '_HighFreq'];
-    
-    if ~exist([filename, '.mp4'],'file')
-        writeMP4(zStack, filename, 60);
-    end
+    writeMP4(zStack, filename, 60);
 end
 
-return
-
 %% Extract statistics
-settings.force = false;
 stats = getStats(labels, settings, metadata);
 
 %% Make plots
