@@ -1,82 +1,108 @@
-%% Initialization
-clearvars
-close all
-settings = prepareWorkspace();
+% %% Initialization
+% clearvars
+% close all
+% settings = prepareWorkspace();
+% 
+% %% Declare constants
+% 
+% %% Load tables describing high and low frequency data
+% tblLowFrequency = readtable(settings.tblLowFreq);
+% [tblHighFrequency, tblPlateMap, tblPlateLegend] = getHighFrequencyTable(settings);
+% processConfocalData(tblLowFrequency.Label, settings)
+% 
+% mkdir('MP4');
+% 
+% %% Make Low Frequency movies
+% s = 32;
+% metadata = load([settings.thruData 'LowFrequency_f1.mat']);
+% 
+% for j = 1:s
+%     % Obtain condition information
+%     str = metadata.metadata.global.get(['Stage' num2str(j)]);
+%     coords = str(2:end-1);
+%     
+%     condition = cellfun(@(x) {num2str(x)},tblPlateMap(sub2ind(size(tblPlateMap),find(contains(settings.letters, coords(1)))+1,str2num(coords(2:end))+1)));
+%     conditionIndex = cell2mat(cellfun(@(x,y) find(~cellfun('isempty',strfind(y,x))), ...
+%         tblHighFrequency.Conditions, repmat({tblPlateLegend.Var1}, [1, length(tblHighFrequency.Conditions)])', 'UniformOutput',false));
+%     
+%     idx = find(contains(tblPlateLegend.Var1, condition));
+%     
+%     filename = ['MP4' filesep 'Cl8_ZB_' num2str(tblPlateLegend.Blebbistatin_uM(idx)) ...
+%         '_uM_Bleb_' num2str(tblPlateLegend.DMSO_percent(idx)) '_pctDMSO_'...
+%         coords '_LowFreq'];
+%     
+%     disp(['Processing: ' filename])
+%     
+%     if exist([filename, '.mp4'],'file')
+%         continue
+%     end
+%     
+%     % Load raw data
+%     totalZProj = [];
+%     for i = 1:length(tblLowFrequency.Label)
+%         tmp = load([settings.thruData 'LowFrequency_s' num2str(j) '_f' num2str(i) '.mat'], 'zProj');
+%         totalZProj = cat(3, totalZProj, tmp.zProj);
+%     end
+%     
+%     % Convert into RGB shape
+%     totalZProj = totalZProj(:,:,:,[2,1]);
+%     totalZProj(:,:,:,3) = 0;
+%     
+%     writeMP4(totalZProj, filename, 15);
+% end
+% 
+% %% Make high frequency movies
+% for i = 1:length(tblHighFrequency.Label)
+%     filename = ['MP4' filesep 'Cl8_ZB_' num2str(tblHighFrequency.Blebbistatin_uM(i)) ...
+%         '_uM_Bleb_' num2str(tblHighFrequency.DMSO_percent(i)) '_pctDMSO_' ...
+%         tblHighFrequency.PlateAddress{i} '_day_' num2str(round(tblHighFrequency.Days(i)*100)/100) '_HighFreq'];
+%     
+%     disp(['Processing: ' filename])
+%     
+%     if exist([filename, '.mp4'],'file')
+%         continue
+%     end
+%     
+%     if ~exist([settings.thruData tblHighFrequency.Label{i} '.mat'], 'file')
+%         raw = bfopen([settings.inData 'HighFrequency' filesep tblHighFrequency.Label{i} '.tif']);
+%         raw = cat(1,raw{:,1});
+%         zStack = cat(3,raw{:,1});
+%         mkdir(fileparts([settings.thruData tblHighFrequency.Label{i}]))
+%         save([settings.thruData tblHighFrequency.Label{i} '.mat'], 'zStack');
+%     else
+%         load([settings.thruData tblHighFrequency.Label{i} '.mat'], 'zStack');
+%     end
+%     
+%     writeMP4(zStack, filename, 60);
+% end
 
-%% Declare constants
-
-%% Load tables describing high and low frequency data
-tblLowFrequency = readtable(settings.tblLowFreq);
-[tblHighFrequency, tblPlateMap, tblPlateLegend] = getHighFrequencyTable(settings);
-processConfocalData(tblLowFrequency.Label, settings)
-
-mkdir('MP4');
-
-%% Make Low Frequency movies
-s = 32;
-metadata = load([settings.thruData 'LowFrequency_f1.mat']);
-
-for j = 1:s
-    % Obtain condition information
-    str = metadata.metadata.global.get(['Stage' num2str(j)]);
-    coords = str(2:end-1);
+%% Extract statistics
+for i = 1:32
+    coordArray{i} = metadata.metadata.global.get(['Stage' num2str(i)]);
     
+    coords = coordArray{i}(2:end-1);
     condition = cellfun(@(x) {num2str(x)},tblPlateMap(sub2ind(size(tblPlateMap),find(contains(settings.letters, coords(1)))+1,str2num(coords(2:end))+1)));
     conditionIndex = cell2mat(cellfun(@(x,y) find(~cellfun('isempty',strfind(y,x))), ...
         tblHighFrequency.Conditions, repmat({tblPlateLegend.Var1}, [1, length(tblHighFrequency.Conditions)])', 'UniformOutput',false));
     
-    idx = find(contains(tblPlateLegend.Var1, condition));
+    idx(i) = find(contains(tblPlateLegend.Var1, condition));
     
-    filename = ['MP4' filesep 'Cl8_ZB_' num2str(tblPlateLegend.Blebbistatin_uM(idx)) ...
-        '_uM_Bleb_' num2str(tblPlateLegend.DMSO_percent(idx)) '_pctDMSO_'...
-        coords '_LowFreq'];
-    
-    disp(['Processing: ' filename])
-    
-    if exist([filename, '.mp4'],'file')
-        continue
-    end
-    
-    % Load raw data
-    totalZProj = [];
-    for i = 1:length(tblLowFrequency.Label)
-        tmp = load([settings.thruData 'LowFrequency_s' num2str(j) '_f' num2str(i) '.mat'], 'zProj');
-        totalZProj = cat(3, totalZProj, tmp.zProj);
-    end
-    
-    % Convert into RGB shape
-    totalZProj = totalZProj(:,:,:,[2,1]);
-    totalZProj(:,:,:,3) = 0;
-    
-    writeMP4(totalZProj, filename, 15);
 end
 
-%% Make high frequency movies
-for i = 1:length(tblHighFrequency.Label)
-    filename = ['MP4' filesep 'Cl8_ZB_' num2str(tblHighFrequency.Blebbistatin_uM(i)) ...
-        '_uM_Bleb_' num2str(tblHighFrequency.DMSO_percent(i)) '_pctDMSO_' ...
-        tblHighFrequency.PlateAddress{i} '_day_' num2str(round(tblHighFrequency.Days(i)*100)/100) '_HighFreq'];
-    
-    disp(['Processing: ' filename])
-    
-    if exist([filename, '.mp4'],'file')
-        continue
-    end
-    
-    if ~exist([settings.thruData tblHighFrequency.Label{i} '.mat'], 'file')
-        raw = bfopen([settings.inData 'HighFrequency' filesep tblHighFrequency.Label{i} '.tif']);
-        raw = cat(1,raw{:,1});
-        zStack = cat(3,raw{:,1});
-        mkdir(fileparts([settings.thruData tblHighFrequency.Label{i}]))
-        save([settings.thruData tblHighFrequency.Label{i} '.mat'], 'zStack');
-    else
-        load([settings.thruData tblHighFrequency.Label{i} '.mat'], 'zStack');
-    end
-    
-    writeMP4(zStack, filename, 60);
-end
+coord = '"D3"';
 
-%% Extract statistics
+s = find(contains(coordArray, coord));
+conditions = tblPlateLegend(idx(s),:);
+idxHighFreq = find(contains(tblHighFrequency.PlateAddress, coord(2:end-1)));
+
+
+return
+
+
+
+
+
+
 stats = getStats(labels, settings, metadata);
 
 %% Make plots
